@@ -28,8 +28,8 @@ int main(int argc, char **argv, char **env) {
   // initialize simulation input 
   top->clk = 1;
   top->rst = 0;
-  top->wr = 1;
-  top->rd = 1;
+  top->wr_en = 1;
+  top->rd_en = 1;
   top->offset = 64;
   
   // intialize variables for analogue output
