@@ -18,7 +18,6 @@ class Vcounter___024root final : public VerilatedModule {
     VL_IN8(en,0,0);
     CData/*0:0*/ __Vclklast__TOP__clk;
     CData/*0:0*/ __Vclklast__TOP__rst;
-    VL_IN16(incr,8,0);
     VL_OUT16(count,8,0);
 
     // INTERNAL VARIABLES

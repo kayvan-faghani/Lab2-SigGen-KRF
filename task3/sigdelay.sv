@@ -9,16 +9,16 @@ module sigdelay #(
     input logic     rd_en,
     input logic [A_WIDTH-1:0] offset,
     input logic [D_WIDTH-1:0] mic_signal,
+    output logic [A_WIDTH-1:0]current_address,
     output logic [D_WIDTH-1:0] delayed_signal
 );
 
 logic [A_WIDTH-1:0] address;
-
+assign current_address = address;
 counter counter (
     .clk (clk),
     .rst (rst),
     .en (en),
-    .incr (offset),
     .count (address)
 );
 
@@ -27,7 +27,7 @@ ram voiceram (
     .rd_en (rd_en),
     .wr_en (wr_en),
     .rd_addr (address),
-    .wr_addr (address+incr),
+    .wr_addr (address+offset),
     .din (mic_signal),
     .dout (delayed_signal)
 );

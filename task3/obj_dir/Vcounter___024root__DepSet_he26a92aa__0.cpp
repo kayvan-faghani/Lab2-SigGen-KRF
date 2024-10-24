@@ -17,8 +17,7 @@ VL_INLINE_OPT void Vcounter___024root___sequent__TOP__0(Vcounter___024root* vlSe
     if (vlSelf->rst) {
         __Vdly__count = 0U;
     } else if (vlSelf->en) {
-        __Vdly__count = (0x1ffU & ((IData)(vlSelf->count) 
-                                   + (IData)(vlSelf->incr)));
+        __Vdly__count = (0x1ffU & ((IData)(1U) + (IData)(vlSelf->count)));
     }
     vlSelf->count = __Vdly__count;
 }
@@ -49,7 +48,5 @@ void Vcounter___024root___eval_debug_assertions(Vcounter___024root* vlSelf) {
         Verilated::overWidthError("rst");}
     if (VL_UNLIKELY((vlSelf->en & 0xfeU))) {
         Verilated::overWidthError("en");}
-    if (VL_UNLIKELY((vlSelf->incr & 0xfe00U))) {
-        Verilated::overWidthError("incr");}
 }
 #endif  // VL_DEBUG

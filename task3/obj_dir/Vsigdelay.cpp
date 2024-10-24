@@ -19,6 +19,7 @@ Vsigdelay::Vsigdelay(VerilatedContext* _vcontextp__, const char* _vcname__)
     , mic_signal{vlSymsp->TOP.mic_signal}
     , delayed_signal{vlSymsp->TOP.delayed_signal}
     , offset{vlSymsp->TOP.offset}
+    , current_address{vlSymsp->TOP.current_address}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context

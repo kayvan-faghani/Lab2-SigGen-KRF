@@ -33,6 +33,7 @@ class Vsigdelay VL_NOT_FINAL : public VerilatedModel {
     VL_IN8(&mic_signal,7,0);
     VL_OUT8(&delayed_signal,7,0);
     VL_IN16(&offset,8,0);
+    VL_OUT16(&current_address,8,0);
 
     // CELLS
     // Public to allow access to /* verilator public */ items.

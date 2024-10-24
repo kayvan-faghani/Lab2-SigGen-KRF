@@ -6,6 +6,14 @@
 
 #include "Vsigdelay___024root.h"
 
+VL_ATTR_COLD void Vsigdelay___024root___settle__TOP__0(Vsigdelay___024root* vlSelf) {
+    if (false && vlSelf) {}  // Prevent unused
+    Vsigdelay__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vsigdelay___024root___settle__TOP__0\n"); );
+    // Body
+    vlSelf->current_address = vlSelf->sigdelay__DOT__address;
+}
+
 VL_ATTR_COLD void Vsigdelay___024root___eval_initial(Vsigdelay___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vsigdelay__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
@@ -19,6 +27,8 @@ VL_ATTR_COLD void Vsigdelay___024root___eval_settle(Vsigdelay___024root* vlSelf)
     if (false && vlSelf) {}  // Prevent unused
     Vsigdelay__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vsigdelay___024root___eval_settle\n"); );
+    // Body
+    Vsigdelay___024root___settle__TOP__0(vlSelf);
 }
 
 VL_ATTR_COLD void Vsigdelay___024root___final(Vsigdelay___024root* vlSelf) {
@@ -39,9 +49,9 @@ VL_ATTR_COLD void Vsigdelay___024root___ctor_var_reset(Vsigdelay___024root* vlSe
     vlSelf->rd_en = VL_RAND_RESET_I(1);
     vlSelf->offset = VL_RAND_RESET_I(9);
     vlSelf->mic_signal = VL_RAND_RESET_I(8);
+    vlSelf->current_address = VL_RAND_RESET_I(9);
     vlSelf->delayed_signal = VL_RAND_RESET_I(8);
     vlSelf->sigdelay__DOT__address = VL_RAND_RESET_I(9);
-    vlSelf->sigdelay__DOT__incr = VL_RAND_RESET_I(1);
     for (int __Vi0=0; __Vi0<512; ++__Vi0) {
         vlSelf->sigdelay__DOT__voiceram__DOT__ram_array[__Vi0] = VL_RAND_RESET_I(8);
     }

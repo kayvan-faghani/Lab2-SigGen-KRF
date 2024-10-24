@@ -16,8 +16,8 @@ VL_INLINE_OPT void Vsigdelay___024root___sequent__TOP__0(Vsigdelay___024root* vl
         vlSelf->__Vdly__sigdelay__DOT__address = 0U;
     } else if (vlSelf->en) {
         vlSelf->__Vdly__sigdelay__DOT__address = (0x1ffU 
-                                                  & ((IData)(vlSelf->sigdelay__DOT__address) 
-                                                     + (IData)(vlSelf->offset)));
+                                                  & ((IData)(1U) 
+                                                     + (IData)(vlSelf->sigdelay__DOT__address)));
     }
 }
 
@@ -41,7 +41,7 @@ VL_INLINE_OPT void Vsigdelay___024root___sequent__TOP__1(Vsigdelay___024root* vl
         __Vdlyvset__sigdelay__DOT__voiceram__DOT__ram_array__v0 = 1U;
         __Vdlyvdim0__sigdelay__DOT__voiceram__DOT__ram_array__v0 
             = (0x1ffU & ((IData)(vlSelf->sigdelay__DOT__address) 
-                         + (IData)(vlSelf->sigdelay__DOT__incr)));
+                         + (IData)(vlSelf->offset)));
     }
     if (__Vdlyvset__sigdelay__DOT__voiceram__DOT__ram_array__v0) {
         vlSelf->sigdelay__DOT__voiceram__DOT__ram_array[__Vdlyvdim0__sigdelay__DOT__voiceram__DOT__ram_array__v0] 
@@ -55,6 +55,7 @@ VL_INLINE_OPT void Vsigdelay___024root___sequent__TOP__2(Vsigdelay___024root* vl
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vsigdelay___024root___sequent__TOP__2\n"); );
     // Body
     vlSelf->sigdelay__DOT__address = vlSelf->__Vdly__sigdelay__DOT__address;
+    vlSelf->current_address = vlSelf->sigdelay__DOT__address;
 }
 
 void Vsigdelay___024root___eval(Vsigdelay___024root* vlSelf) {

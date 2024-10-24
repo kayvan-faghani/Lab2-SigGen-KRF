@@ -20,10 +20,10 @@ class Vsigdelay___024root final : public VerilatedModule {
     VL_IN8(rd_en,0,0);
     VL_IN8(mic_signal,7,0);
     VL_OUT8(delayed_signal,7,0);
-    CData/*0:0*/ sigdelay__DOT__incr;
     CData/*0:0*/ __Vclklast__TOP__clk;
     CData/*0:0*/ __Vclklast__TOP__rst;
     VL_IN16(offset,8,0);
+    VL_OUT16(current_address,8,0);
     SData/*8:0*/ sigdelay__DOT__address;
     SData/*8:0*/ __Vdly__sigdelay__DOT__address;
     VlUnpacked<CData/*7:0*/, 512> sigdelay__DOT__voiceram__DOT__ram_array;

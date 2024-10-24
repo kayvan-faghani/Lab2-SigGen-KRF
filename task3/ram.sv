@@ -17,6 +17,6 @@ always_ff @(posedge clk) begin
     if(wr_en == 1'b1)
         ram_array[wr_addr] <= din;
     if(rd_en == 1'b1)
-        dout <= ram_array[rd_addr];
+        dout <= ram_array [rd_addr];
 end;
 endmodule

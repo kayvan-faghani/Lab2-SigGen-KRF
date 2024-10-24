@@ -31,6 +31,7 @@ int main(int argc, char **argv, char **env) {
   top->wr_en = 1;
   top->rd_en = 1;
   top->offset = 64;
+  top->en = 1;
   
   // intialize variables for analogue output
   vbdInitMicIn(RAM_SZ);
@@ -45,7 +46,7 @@ int main(int argc, char **argv, char **env) {
     }
     top->mic_signal = vbdMicValue();
     top->offset = abs(vbdValue());     // adjust delay by changing incr
-
+    std::cout << int(top->current_address) << " " << int(top->current_address) + int(top->offset) << std::endl;
     // plot RAM input/output, send sample to DAC buffer, and print cycle count
     vbdPlot(int (top->mic_signal), 0, 255);
     vbdPlot(int (top->delayed_signal), 0, 255);
